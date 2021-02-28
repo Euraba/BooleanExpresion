@@ -26,13 +26,13 @@ private :
     char notSign, BASE ;
 
 public :
-    __attribute__ ( (always_inline)) BooleanExp(std::string aux) {
+    __attribute__ ( (always_inline)) BooleanExp(std::string aux, char N = '~', char B = 'a') {
         exp = aux ;
         point = 0 ;
         /// Change the NOT sign here
-        notSign = '~' ;
+        notSign = N ;
         /// it does not work with both upper and lower at the same time
-        BASE = 'a' ;
+        BASE = B ;
     }
 
     void reset(int pos = 0) {
