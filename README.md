@@ -1,4 +1,4 @@
-# BooleanExpresion
+# BooleanExpression
 A C++ class that evaluates a boolean expression
 This class works pretty good, but there are some limitations.
 1) You can only have ONLY uppercase or ONLY lowercase. The default is lowercase but you can change it in the constructor
