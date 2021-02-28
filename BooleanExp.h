@@ -10,92 +10,95 @@
 
 class BooleanExp {
 private :
-    static const int SIGMA = 26 ;
-    std::string exp ;
-    std::bitset<1 + SIGMA> upd ;
-    int point ;
+    static const int SIGMA = 26;
+    std::string exp;
+    std::bitset<1 + SIGMA> upd;
+    int point;
+
     char currentChar() {
         while (exp[point] == ' ') {
-            advance() ;
+            advance();
         }
-        return exp[point] ;
+        return exp[point];
     }
+
     void advance() {
-        point ++ ;
+        point++;
     }
-    char notSign, BASE ;
+
+    char notSign, BASE;
 
 public :
-    __attribute__ ( (always_inline)) BooleanExp(std::string aux, char N = '~', char B = 'a') {
-        exp = aux ;
-        point = 0 ;
+    __attribute__ ((always_inline)) BooleanExp(std::string aux, char N = '~', char B = 'a') {
+        exp = aux;
+        point = 0;
         /// Change the NOT sign here
-        notSign = N ;
+        notSign = N;
         /// it does not work with both upper and lower at the same time
-        BASE = B ;
+        BASE = B;
     }
 
     void reset(int pos = 0) {
-        this ->point = pos ;
+        this->point = pos;
     }
 
     bool evaluate() {
-        bool currVal = xorFactor() ;
+        bool currVal = xorFactor();
         while (currentChar() == '|') {
-            advance() ;
-            currVal |= xorFactor() ;
+            advance();
+            currVal |= xorFactor();
             //advance() ;
         }
-        reset() ;
-        return currVal ;
+        reset();
+        return currVal;
     }
 
     bool xorFactor() {
-        bool currVal = andFactor() ;
+        bool currVal = andFactor();
         while (currentChar() == '^') {
-            advance() ;
-            currVal ^= andFactor() ;
+            advance();
+            currVal ^= andFactor();
             //advance() ;
         }
-        return currVal ;
+        return currVal;
     }
 
     bool andFactor() {
-        bool currVal = notFactor() ;
+        bool currVal = notFactor();
         while (currentChar() == '&') {
-            advance() ;
-            currVal &= notFactor() ;
+            advance();
+            currVal &= notFactor();
             //advance() ;
         }
-        return currVal ;
+        return currVal;
     }
 
     bool notFactor() {
-        bool currVal ;
+        bool currVal;
         if (currentChar() == '(') {
-            advance() ;
-            currVal = evaluate() ;
-            advance() ;
+            advance();
+            currVal = evaluate();
+            advance();
         } else {
             if (currentChar() == '0') {
-                advance() ;
-                currVal = 0 ;
+                advance();
+                currVal = 0;
             } else if (currentChar() == '1') {
-                advance() ;
-                currVal = 1 ;
+                advance();
+                currVal = 1;
             } else if (currentChar() == notSign) {
-                advance() ;
-                currVal = !notFactor() ;
+                advance();
+                currVal = !notFactor();
             } else {
-                currVal = upd[currentChar() - BASE] ;
-                advance() ;
+                currVal = upd[currentChar() - BASE];
+                advance();
             }
         }
-        return currVal ;
+        return currVal;
     }
 
     void update(char let, bool value) {
-        upd[let - BASE] = value ;
+        upd[let - BASE] = value;
     }
 };
 
