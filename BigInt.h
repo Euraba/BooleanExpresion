@@ -2,8 +2,8 @@
 // Created by Euraba on 03.03.2021.
 //
 
-#ifndef TURNURI4_BIGINT_H
-#define TURNURI4_BIGINT_H
+#ifndef BIGINT_H
+#define BIGINT_H
 
 
 #include <iomanip>
