@@ -2,8 +2,8 @@
 // Created by Euraba on 03.03.2021.
 //
 
-#ifndef TURNURI4_POLYGON_H
-#define TURNURI4_POLYGON_H
+#ifndef POLYGON_H
+#define POLYGON_H
 
 
 #include <vector>
@@ -68,4 +68,4 @@ public :
 };
 
 
-#endif //TURNURI4_POLYGON_H
+#endif POLYGON_H
