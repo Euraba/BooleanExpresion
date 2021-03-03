@@ -106,4 +106,4 @@ public :
 } ;
 
 
-#endif //TURNURI4_BIGINT_H
+#endif
