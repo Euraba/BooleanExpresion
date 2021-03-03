@@ -2,8 +2,8 @@
 // Created by Euraba on 03.03.2021.
 //
 
-#ifndef TURNURI4_BITTREE_H
-#define TURNURI4_BITTREE_H
+#ifndef BITTREE_H
+#define BITTREE_H
 
 
 #include <vector>
@@ -47,4 +47,4 @@ public :
 };
 
 
-#endif //TURNURI4_BITTREE_H
+#endif //BITTREE_H
