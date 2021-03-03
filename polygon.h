@@ -1,5 +1,5 @@
 //
-// Created by she on 03.03.2021.
+// Created by Euraba on 03.03.2021.
 //
 
 #ifndef TURNURI4_POLYGON_H
