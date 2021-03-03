@@ -2,8 +2,8 @@
 // Created by Euraba on 03.03.2021.
 //
 
-#ifndef TURNURI4_HEAP_H
-#define TURNURI4_HEAP_H
+#ifndef HEAP_H
+#define HEAP_H
 
 
 class Heap {
@@ -75,4 +75,4 @@ public :
 
 };
 
-#endif //TURNURI4_HEAP_H
+#endif HEAP_H
